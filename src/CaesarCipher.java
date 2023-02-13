@@ -1,8 +1,8 @@
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
-public class CaesarCipher {
-    public String cipher(String message, int offset) {
+public final class CaesarCipher {
+    public static String cipher(String message, int offset) {
         message = message.replaceAll("[^а-яА-Я]\\d\\w[0-9]", " ");
         StringBuilder result = new StringBuilder();
 
@@ -26,7 +26,7 @@ public class CaesarCipher {
         return result.toString();
     }
 
-    public String decipher(String message, int offset) {
+    public static String decipher(String message, int offset) {
         message = message.replaceAll("[^а-яА-Я]\\d\\w[0-9]", " ");
         StringBuilder result = new StringBuilder();
 
@@ -50,8 +50,10 @@ public class CaesarCipher {
         return result.toString();
     }
 
-    public void bruteForce(String ciphertext) {
+    public static String bruteForce(String ciphertext) {
+        StringBuilder result=new StringBuilder();
         for (int offset = 1; offset < 33; offset++)
-            System.out.println("Offset№" + offset + ": " + decipher(ciphertext, offset));
+            result.append("Offset№" + offset + ": " + decipher(ciphertext, offset));
+        return result.toString();
     }
 }
