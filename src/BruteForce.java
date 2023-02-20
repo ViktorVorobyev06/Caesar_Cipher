@@ -7,7 +7,6 @@ public final class BruteForce {
         try (
                 BufferedReader br = new BufferedReader(new FileReader(path));
                 FileWriter fileWriter = new FileWriter("BruteForce.txt")) {
-
             String s;
             StringBuilder message = new StringBuilder();
             while ((s = br.readLine()) != null) {

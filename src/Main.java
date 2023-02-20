@@ -37,7 +37,7 @@ public class Main {
                 System.out.println("Введи путь к файлу");
                 input = new Scanner(System.in);
                 path = input.nextLine();
-                CaesarCipher.bruteForce(path);
+                BruteForce.bruteForce(path);
                 break;
             default:
                 System.out.println("Ты не чего не выбрал перезапусти");
